@@ -1,0 +1,193 @@
+Кнопки социальных сетей [1/18]
+
+<div class="share">
+    <b>Соцсети</b>
+    <a class="social social-vk" href="http://vk.com/htmlacademy"></a>
+    <a class="social social-fb" href="http://www.facebook.com/htmlacademy"></a>
+    <a class="social social-tw" href="http://twitter.com/htmlacademy_ru"></a>
+</div>
+
+.share {
+    width: 270px;
+    margin: 0 auto;
+    margin-top: 120px;
+    padding: 10px;
+    padding-left: 20px;
+    background: #ecf0f1;
+}
+
+.share b {
+    margin-right: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #7f8c8d;
+}
+
+.social {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background: #bdc3c7 url("/assets/course14/social.png") no-repeat;
+    vertical-align: middle;
+}
+
+.social-vk {
+    background-color: #6d8fb3;
+    background-position: 0 0;
+}
+
+.social-fb {
+    background-color: #526da3;
+    background-position: -40px 0;
+}
+
+.social-tw {
+    background-color: #73bfe6;
+    background-position: -80px 0;
+}
+
+
+
+Переключатель страниц, шаг 1 [4/18]
+
+Разметка переключателей очень проста: это один див, внутри которого
+расположены ссылки с номерами страниц и ссылки «Вперёд/Назад».
+Иногда внутри переключателя используют спаны, например, для «многоточий».
+Также переключатели иногда верстают списками.
+Для начала зададим для ссылок и спанов блочно-строчный тип, размеры,
+внутренние отступы и фон.
+Обратите внимание, что мы задаём не ширину, а минимальную ширину min-width,
+т.к. номера страниц могут быть длинными: 1 и 1000.
+Благодаря сочетанию паддингов и минимальной ширины, номер страницы будет
+всегда смотреться хорошо.
+Займемся переключателями «вперед» и «назад». Пока что мы используем
+текстовые надписи. Но мы их спрячем и заменим на стрелочки.
+  a) добавим к переключателям классы prev и next.
+  b) чтобы спрятать текст, используем свойство text-indent с большим
+  отрицательным значением.
+Затем отделим переключатели от номеров страниц с помощью отступов и с
+помощью уже знакомой техники спрайтов добавим на фон стрелочки.
+
+Для выделения текущей страницы будем использовать класс current, для
+которого зададим зелёный фон.
+Когда мы находимся на первой странице, кнопка «назад» должна быть
+неактивна,
+а когда на последней странице — неактивна кнопка «вперед».
+Оформим неактивные кнопки с помощью класса disabled, который будет делать
+кнопку полупрозрачной.
+
+
+
+.paginator {
+    width: 280px;
+    margin: 30px auto;
+    padding: 10px;
+    white-space: nowrap;
+    background: #ecf0f1;
+}
+
+.paginator a,
+.paginator span {
+    display: inline-block;
+    min-width: 20px;
+    height: 40px;
+    padding: 0 10px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: #95a5a6;
+}
+
+.paginator .prev {
+    margin-right: 20px;
+    text-indent: -1000px;
+    background-image: url("/assets/course14/arrows.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.paginator .next {
+    margin-left: 20px;
+    text-indent: -1000px;
+    background-image: url("/assets/course14/arrows.png");
+    background-position: 0 -40px;
+    background-repeat: no-repeat;
+}
+
+Контакты, шаг 2 [11/18]
+
+Заголовок и отступы сделали блок контактов более структурированным.
+Отступы слева предназначены для размещения иконок.
+Иконки будем размещать по одной из классических техник:
+ «абсолютные элементы + спрайты».
+В каждом из блоков .item есть пустой див .icon, в котором и будет
+отображаться иконка.
+Специальные дивы в этом задании мы будем использовать для наглядности.
+Лучше иконки выносить в фон псевдоэлементов ::before и ::after,
+чтобы не «засорять» разметку.
+Зададим этим дивам абсолютное позиционирование, фиксированные размеры и
+расположим в верхнем левом углу родителя (для этого мы задавали
+относительное позиционирование для .item).
+Осталось задать для .icon картинку-спрайт в качестве фона.
+
+Вертаем комменты:
+
+<div class="comment">
+     <div class="comment-avatar"></div>
+     <div class="comment-author">Дима Дивов</div>
+     <div class="comment-text">
+         Верстать сайты надо только на дивах!
+         <div class="comment-date">16.09.2013</div>
+     </div>
+     <a href="#reply" title="Ответить" class="comment-reply"></a>
+ </div>
+
+ .comment {
+    position: relative;
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-left: 50px;
+}
+
+.comment-avatar {
+    position: absolute;
+    top: 0px;
+    left: -40px;
+    width: 70px;
+    height: 70px;
+    background: #7f8c8c url("/assets/course14/avatar.png") no-repeat 50% 50%;
+}
+
+.comment-author {
+    margin-bottom: 5px;
+    padding-left: 45px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.comment-text {
+    padding: 12px;
+    padding-left: 45px;
+    background-color: #f8f8f8;
+    border-bottom: 5px solid #e5e6e6;
+}
+
+.comment-date {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #bdc3c7;
+}
+
+.comment-reply {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: url("/assets/course14/reply.png") no-repeat 0 0;
+}

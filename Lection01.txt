@@ -1,0 +1,34 @@
+Метод прогрессивного джипега:
+1) Разметка
+2) Подготовка графики
+3) Создание сеток
+4) Пошаговое оформление элементов
+5) Оформление контента
+6) Оптимизация
+
+
+Браузерные движки - библиотека отвечающая за:
+   - загрузку сайта
+   - отрисовку сайта
+   - работу джава скрипта
+
+Blink:  Chrome, Opera, YandexBrowser
+WebKit: Safari
+Gecko: FireFox
+Trident: IE11
+EdgeHTML: Edge
+
+Редакторы кода для дизайнеров:
+  Avocode
+  Adobe Muse
+  Masaw
+
+FTP клиенты:
+  WinScp
+  CyberDuck
+  FileZilla
+
+Онлайн песочницы:
+  JS Fiddle
+  CSS Desc
+  Codepen    
