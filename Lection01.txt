@@ -27,8 +27,9 @@ FTP клиенты:
   WinScp
   CyberDuck
   FileZilla
+  OpenFtp
 
 Онлайн песочницы:
   JS Fiddle
   CSS Desc
-  Codepen    
+  Codepen
